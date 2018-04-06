@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Camera_component</string>
+    <string name="title_activity_camera_open">camera_open</string>
+</resources>
