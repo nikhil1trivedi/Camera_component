@@ -57,6 +57,8 @@ public class camera_open extends AppCompatActivity {
             }
 
 
+            //Hello this is making sure that there is an updated version 
+
 
 
 
