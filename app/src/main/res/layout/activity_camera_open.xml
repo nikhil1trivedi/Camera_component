@@ -22,10 +22,11 @@
         app:layout_anchor="@+id/button_capture"
         app:layout_anchorGravity="top|center" >
 
-        <SurfaceView
-            android:id="@+id/surfaceView"
+        <TextureView
+            android:id="@+id/TextureView"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
+
     </FrameLayout>
 
     <Button
@@ -33,7 +34,7 @@
         android:text="Capture"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
+        android:layout_gravity="bottom"
         />
 
 
