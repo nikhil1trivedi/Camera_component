@@ -12,10 +12,14 @@ import android.view.SurfaceView;
 import android.view.TextureView;
 import android.view.ViewGroup;
 import android.widget.Button;
+<<<<<<< HEAD
 import android.widget.TextView;
 
 import java.io.IOException;
 import java.util.List;
+=======
+import android.hardware.Camera;
+>>>>>>> 940d418ab4bbefc6f8770d2d6dff33a088715888
 
 
 public class CameraMain extends AppCompatActivity {
@@ -24,11 +28,9 @@ public class CameraMain extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_camera_main);
-
-
-
     }
 
+<<<<<<< HEAD
     // initialize Texture View
 
     TextureView textureView = (TextView) findViewById(R.id.TextureView);
@@ -47,22 +49,38 @@ public class CameraMain extends AppCompatActivity {
         try {
             c = Camera.open(); // attempt to get a Camera instance
         } catch (Exception e) {
+=======
+    /** A safe way to get an instance of the Camera object. */
+    public static Camera getCameraInstance(){
+        Camera c = null;
+        try {
+            c = Camera.open(); // attempt to get a Camera instance
+        }
+        catch (Exception e){
+>>>>>>> 940d418ab4bbefc6f8770d2d6dff33a088715888
             // Camera is not available (in use or does not exist)
         }
         return c; // returns null if camera is unavailable
     }
+<<<<<<< HEAD
 
     /**
      * Check if this device has a camera
      */
     private boolean checkCameraHardware(Context context) {
         if (context.getPackageManager().hasSystemFeature(PackageManager.FEATURE_CAMERA)) {
+=======
+    /** Check if this device has a camera */
+    private boolean checkCameraHardware(Context context) {
+        if (context.getPackageManager().hasSystemFeature(PackageManager.FEATURE_CAMERA)){
+>>>>>>> 940d418ab4bbefc6f8770d2d6dff33a088715888
             // this device has a camera
             return true;
         } else {
             // no camera on this device
             return false;
         }
+<<<<<<< HEAD
     }
 
 
@@ -117,7 +135,10 @@ public class CameraMain extends AppCompatActivity {
     }
 
 
+=======
+>>>>>>> 940d418ab4bbefc6f8770d2d6dff33a088715888
     }
+}
 
 
 
