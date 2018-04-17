@@ -3,7 +3,7 @@ package com.example.nikhiltrivedi.camera_component;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.graphics.Camera;
-import android.graphics.SurfaceTexture; 
+import android.graphics.SurfaceTexture;
 import android.nfc.Tag;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -21,6 +21,7 @@ import android.hardware.camera2.CameraDevice;
 import android.hardware.camera2.CameraAccessException;
 import android.hardware.camera2.CameraCaptureSession;
 import android.hardware.camera2.CameraCharacteristics;
+import android.hardware.camera2.CaptureRequest;
 import android.hardware.camera2.CameraDevice;
 import android.hardware.camera2.CameraManager;
 import android.hardware.camera2.CameraMetadata;
@@ -83,21 +84,22 @@ public class camera_open extends AppCompatActivity
 
         textureView = (TextureView) findViewById(R.id.camera_preview) ;
         //assert is used to declare an expected boolean condition in a program
-        assert textView != null ;
+        assert textureView != null ;
         //set listener for the textview
         textureView.setSurfaceTextureListener(textureListener) ;
 
         //initialize the capture button
-        takePictureButton = (Button) findViewById(R.id.button_camera) ;
-        assert textView != null ;
+        takePictureButton = (Button) findViewById(R.id.button_capture) ;
+        assert textureView != null ;
         takePictureButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
                 takePicture() ;
             });
 
-        }
+        });
     }
+
 
     //1. On Surface Texture Available
 TextureView.SurfaceTextureListener textureListener = new TextureView.SurfaceTextureListener(){
