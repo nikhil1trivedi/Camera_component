@@ -3,6 +3,7 @@ package com.example.nikhiltrivedi.camera_component;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.graphics.Camera;
+import android.graphics.SurfaceTexture; 
 import android.nfc.Tag;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -18,10 +19,26 @@ import android.view.TextureView;
 import android.view.View;
 import android.hardware.camera2.CameraDevice;
 import android.hardware.camera2.CameraAccessException;
-import android.hardware.camera2.
-import android.view.ViewGroup;
+import android.hardware.camera2.CameraCaptureSession;
+import android.hardware.camera2.CameraCharacteristics;
+import android.hardware.camera2.CameraDevice;
+import android.hardware.camera2.CameraManager;
+import android.hardware.camera2.CameraMetadata;
+import android.hardware.camera2.TotalCaptureResult;
+import android.media.Image ;
+import android.media.ImageReader;
+import android.os.Bundle;
+import android.os.Environment;
+import android.os.Handler;
+import android.os.HandlerThread;
+import android.util.Log;
+import android.util.Size;
+import android.util.SparseIntArray;
+import android.view.TextureView;
+import android.view.Surface;
+import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
+
 
 
 import java.io.File;
@@ -31,14 +48,18 @@ import java.util.List;
 public class camera_open extends AppCompatActivity
     private Button takePictureButton ;
     private TextureView textureView;
-    private static final SparseIntArray ORIENTATIONS = new SparseIntArray();
-    static {
-        ORIENTATIONS.append(Surface.ROTATION_0,90);
-        ORIENTATIONS.append(Surface.ROTATION_90,0);
-        ORIENTATIONS.append(Surface.ROTATION_180,270);
-        ORIENTATIONS.append(Surface.ROTATION_270,180);
+
+    //SparseIntArray is similar to a hashmap but with integers
+        // Surface.ROTATION is a function with the camera device
+    private static final SparseIntArray ORIENTATIONS = new SparseIntArray() {
+        static {
+            ORIENTATIONS.append(Surface.ROTATION_0, int 90);
+            ORIENTATIONS.append(Surface.ROTATION_90, int 0);
+            ORIENTATIONS.append(Surface.ROTATION_180, int 270);
+            ORIENTATIONS.append(Surface.ROTATION_270, int 180);
 
         }
+    };
     private String cameraId;
     protected CameraDevice cameraDevice;
     protected CameraCaptureSession cameraCaptureSessions;
