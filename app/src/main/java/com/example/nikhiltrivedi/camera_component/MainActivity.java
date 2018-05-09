@@ -1,4 +1,4 @@
-package edmt.dev.androidcamera2api;
+package com.example.nikhiltrivedi.camera_component;
 
 import android.Manifest;
 import android.content.Context;
@@ -41,7 +41,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
-import com.example.nikhiltrivedi.camera_component.R;
+import com.example.nikhiltrivedi.MainActivity.R;
+
+
+
 public class MainActivity extends AppCompatActivity {
 
     private Button btnCapture;
